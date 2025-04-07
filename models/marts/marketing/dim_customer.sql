@@ -1,8 +1,8 @@
-{{
+/*{{
   config(
     materialized='table'
   )
-}}
+}}*/
 
 /*
 with
@@ -14,6 +14,7 @@ with
 
     orders as (
 
+        -- select * from {{ ref('stg_jaffle_shop__orders') }}
 
     ),
 
