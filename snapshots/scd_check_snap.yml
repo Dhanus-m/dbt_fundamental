@@ -1,0 +1,15 @@
+snapshots:
+  - name: scd2_check_snap
+    relation: source('jaffle_shop', 'orders')
+    config:
+      schema: snapshots
+      database: analytics
+      unique_key: id
+      strategy: check
+      check_cols:
+        - shipped
+        - placed
+        - return_pending
+        - completed
+        - returned
+      hard_deletes: new_record
